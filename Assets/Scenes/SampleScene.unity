@@ -381,7 +381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CameraAxisTransform: {fileID: 1259785291}
   minAngel: -25
-  maxAngel: 15
+  maxAngel: 20
   RotationSpeed: 1000
 --- !u!1 &705507993
 GameObject:
