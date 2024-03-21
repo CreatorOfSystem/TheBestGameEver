@@ -2,29 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class Aidkit : MonoBehaviour
 {
-    public float value = 100;
+    public float healAmount = 50;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+   
 
     // Update is called once per frame
     void Update()
     {
         
     }
-    public void DealDamage(float damage)
+    private void OnTriggerEnter(Collider other)
     {
-        value -= damage;
-        if (value <= 0)
+        var playerHealth = other.gameObject.GetComponent<PlayerHealth>();
+        if (playerHealth != null)
         {
+            playerHealth.AddHealth(healAmount);
             Destroy(gameObject);
         }
-        Debug.Log("0");
     }
-
-
 }
